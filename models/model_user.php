@@ -7,6 +7,7 @@
 			$id=mysql_insert_id();
 			return $id;
 		}
+
 		public function insersion($data){
 			$this->db->insert('users',$data);
 			$id = $this->db->insert_id();
@@ -14,15 +15,12 @@
 			if ($this->db->affected_rows() > 0) {
 				return $query->row();
 			} 
-
 		}
-		public function getUser($user,$pass){
 
+		public function getUser($user,$pass){
         $consulta="SELECT * FROM `users` WHERE user = '$user' and password = '$pass'";
         $query = $this->db->query("$consulta");
         return $query->row();
-    
-
 		}
 
 		public function getSession($id){
@@ -41,16 +39,12 @@
 			$consulta="UPDATE `users` SET `estado`=1 WHERE id ='$id' and code='$code'";
         	$query = $this->db->query("$consulta");
         	return $query;
-
 		}
 
 		public function estado($ide){
 			$consulta='SELECT estado FROM `users` WHERE id ='.$ide;
         	$query = $this->db->query("$consulta");
         	return $query->row();
-
 		}
-
-
 	}
 ?>
