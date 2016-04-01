@@ -26,9 +26,9 @@
               <td><?php echo $email['asunto']; ?></td>
               <td><?php echo $email['mensaje']; ?></td>
               <td>
-                  <a href="<?php echo base_url();?>correo/edita_correo/?cid=<?php echo $email['id']?>"><span class="glyphicon glyphicon-edit">Editar</a>
+                  <a href="<?php echo base_url();?>correo/editar/?cid=<?php echo $email['id']?>"><span class="glyphicon glyphicon-edit">Editar</a>
                   <a href="<?php echo base_url();?>correo/eliminar/?cid=<?php echo $email['id']?>" onClick="return confirm('¿Seguro que desea eliminar el correo?');"><span class="glyphicon glyphicon-trash">Eliminar</a>
-                 <a href="<?php echo base_url();?>envio_correo/enviar" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Enviar</a>
+                  <a href="<?php echo base_url();?>envio_correo/enviar/?cid=<?php echo $email['id']?>" onClick="return confirm('¿Seguro que desea enviar el correo?');"><span class="glyphicon glyphicon-envelope">Enviar</a>
                  
               </td> 
             </tr>
