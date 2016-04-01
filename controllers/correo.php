@@ -10,7 +10,7 @@ class Correo extends CI_Controller {
 		$this->load->view('correos/nuevo_correo');
 	}
 
-	public function insert()
+	public function insert()//Metodo para insertar un nuevo correo
 	{
 		$this->load->model('model_correo','correo');
 		$email = $this->input->post('usuario_email'); 
@@ -40,7 +40,7 @@ class Correo extends CI_Controller {
 			redirect($urln);
 		}
 	}
-
+	//Metodo para editar el correo.
 	public function editar(){
 		$session =  $this->session->userdata['logged_in'];
 
@@ -67,7 +67,7 @@ class Correo extends CI_Controller {
 			redirect($urln);
 		}
 	} 
-
+	//Metodo para realizar un update o actualizar el correo que se edito previamente.
 	public function update(){
 		$email = $this->input->post('usuario_email'); 
 		$asunto = $this->input->post('usuario_asunto');
@@ -86,7 +86,6 @@ class Correo extends CI_Controller {
 
    		$idc = $_REQUEST['cid'];
    		
-   		
    		$this->load->model('model_correo','correo');
    		$this->correo->update($idc,$data);
    		
@@ -99,7 +98,7 @@ class Correo extends CI_Controller {
 			redirect($urln);
    		}
 	}
-
+	//Metodo para eliminar el correo tanto de la base como del correo
 	public function eliminar(){
 		$session =  $this->session->userdata['logged_in'];
 
@@ -122,6 +121,7 @@ class Correo extends CI_Controller {
 		}
 	}
 
+	//Metodo para mostrar los correos de salida y los correos enviados.
 	public function vista(){
 			$session =  $this->session->userdata['logged_in'];
 

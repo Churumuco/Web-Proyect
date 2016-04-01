@@ -8,6 +8,7 @@ class Envio_correo extends CI_Controller {
    $this->load->library('session');
  }
 
+//Metodo para enviar el correo correctamente
  function enviar()
  {
    $data = $this->model_correo->getCorreo();
@@ -44,7 +45,6 @@ class Envio_correo extends CI_Controller {
       {
        show_error($this->email->print_debugger());
      }
-
      $urln = base_url()."correo/vista";
      redirect($urln);
      $this->email->insert($data);

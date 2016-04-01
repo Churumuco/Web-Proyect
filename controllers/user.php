@@ -2,6 +2,7 @@
 
 class User extends CI_Controller {
 
+	//Se cargar las vistas correspondientes
 	public function index()
 	{
 		$data['title'] = 'Pagina Inicio';
@@ -9,19 +10,21 @@ class User extends CI_Controller {
 		$this->load->view('correos/nav_principal');
 		$this->load->view('usuario/login_usuario');
 	}
+	//Se cargar las vistas correspondientes
 	public function login(){
 		$data['title'] = 'Pagina Inicio';
 		$this->load->view('Plantillas/Header', $data);
 		$this->load->view('correos/nav_principal');
 		$this->load->view('usuario/login_usuario');
 	}
+	//Se cargar las vistas correspondientes
 	public function registrar(){
 		$data['title'] = 'Pagina Registro';
 		$this->load->view('Plantillas/Header', $data);
 		$this->load->view('usuario/registro_usuario');
 	}
+	//Se cargar las vistas correspondientes
 	public function insert(){
-
 			$pas = $this->input->post('usuario_password'); 
 			$email = $this->input->post('usuario_correo');
 			
@@ -58,8 +61,8 @@ class User extends CI_Controller {
 		redirect($urln);	
 	}
 
+	//Se autentifica si es el usuario correcto por medio del username y el password.
 	public function autenticar(){
-
 		$this->load->model('model_user', 'user');
 		$user =$this->input->post('usuario_username');
     	$pass = $this->input->post('usuario_password'); 
@@ -92,7 +95,7 @@ class User extends CI_Controller {
 						);
 					$this->session->set_userdata('logged_in', $session_data);			
 			}
-				
+				//Se cargar las vistas correspondientes
 				$this->load->view('Plantillas/Header', $data);
 				$this->load->view('correos/nav_correo');
          		$this->load->view('correos/correos_enviados', $data);
@@ -107,6 +110,7 @@ class User extends CI_Controller {
 		}
 	}
 
+	//Se verifica, si es el usuario correcto nos permite entrar al correo
 	public function verificar(){
 		$code = $_REQUEST['code'];
 		$id = $_REQUEST['id'];
@@ -116,6 +120,7 @@ class User extends CI_Controller {
 		redirect($urln);
 	}
 	
+	//Metodos de el Phpmailer y el STMP para la realizacion de verificacion de correo y envios de correos.
 	public function envioCorreo(){
 
 		//Método de envío de correo para verificar el registro de un nuevo usuario
