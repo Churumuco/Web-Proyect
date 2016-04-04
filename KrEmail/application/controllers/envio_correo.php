@@ -22,24 +22,25 @@ class Envio_correo extends CI_Controller {
       'protocol' => 'smtp',
       'smtp_host' => 'smtp.mandrillapp.com',
       'smtp_port' => 587,
-      'smtp_user' => 'krgr17@hotmail.com',
+      'smtp_user' => 'regus@hotmail.com',
       'smtp_pass' => 'NlXJVAqPJPDrEYj-e-jgjQ',
       'mailtype' => 'html',
       'charset' => 'iso-8859-1',
       'wordwrap' => TRUE
   );
-
+      
+      //Esto es como para saber quien lo envia en caso de que se cambie dentro del parentesis en la sintasix $this->email->from(''); 
+      //El que envia el mensaje seria el que se coloque aqui en este caso coloque uno completamente ficticio en caso de que diera errores
       $message = '';
       $this->load->library('email', $config);
       $this->email->set_newline("\r\n");
-      $this->email->from('krgrojas@gmail.com');
+      $this->email->from('KrEmail@hotmail.com');
       $this->email->to($value['destinatario']);
       $this->email->subject($value['asunto']);
       $this->email->message($value['mensaje']);
       if($this->email->send())
       {
         $this->model_correo->updateEstadoCorreo($value['id']);
-
       }
       else
       {
