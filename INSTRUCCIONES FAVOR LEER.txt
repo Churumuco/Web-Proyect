@@ -12,3 +12,6 @@ EN CASO DE DUDAS
 ESTO ESTA EN CONTROLLERS envio_correo de la linea 12 a la 30.
 
 2. Me recomendaron usar las clases de phpmailer que sirve para facilitar lo de los correos.
+
+COSA QUE ME FALTO	
+1. Me falto agregar solamente lo de enviar a multiples destinatarios.
