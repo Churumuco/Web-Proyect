@@ -2,7 +2,7 @@
 
 class Correo extends CI_Controller {
 
-	public function nuevoCorreo() //Método para crear nuevo correo
+	public function nuevoCorreo() //Se cargan las vistas correspondientes
 	{
 		$data['title'] = 'Pagina Nuevo Correo';
 		$this->load->view('Plantillas/Header', $data);
@@ -10,7 +10,7 @@ class Correo extends CI_Controller {
 		$this->load->view('correos/nuevo_correo');
 	}
 
-	public function insertCorreo()//Metodo para insertar un nuevo correo
+	public function insertCorreo()//Se cargan las vistas correspondientes
 	{
 		$this->load->model('model_correo','correo');
 		$email = $this->input->post('usuario_email'); 
@@ -40,7 +40,7 @@ class Correo extends CI_Controller {
 			redirect($urln);
 		}
 	}
-	//Metodo para editar el correo.
+	//Se cargan las vistas correspondientes
 	public function editarCorreo(){
 		$session =  $this->session->userdata['logged_in'];
 
