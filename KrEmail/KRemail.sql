@@ -16,7 +16,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
 -- Base de datos: `kremail` y de una vez se selecciona dicha bd para que no de errores
 CREATE DATABASE kremail;
 USE kremail;

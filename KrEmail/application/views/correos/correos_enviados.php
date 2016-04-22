@@ -2,8 +2,6 @@
 <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="salida">
       <br/>
-      <a href="<?php echo base_url();?>correo/nuevoCorreo" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Nuevo Correo</a>
-      <br/>
       <br/>
       <div class="table-responsive">
       <table class="table table-bordered">
