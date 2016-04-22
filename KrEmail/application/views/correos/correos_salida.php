@@ -1,7 +1,7 @@
 <p><br/></p>
 
 <div class="container">
-      <div class="center-block">    
+      <div class="center-block">   
         <ul class="nav nav-tabs" role="tablist">
         <li class="active" role="tab" data.toggle="tab"><a href="#nuevo">Nuevo</a></li>
         <li role="tab" data.toggle="tab"><a href="#salida">Correos Salida</a></li>
