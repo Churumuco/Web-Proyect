@@ -34,7 +34,10 @@ CREATE TABLE `emails` (
 
 -- Insert de datos para la tabla `emails`
 INSERT INTO `emails` (`id`, `destinatario`, `id_user`, `mensaje`, `asunto`, `estado`) VALUES
-(24, 'krgrojas@gmail.com', 73, 'Hola que tal....    ', 'Esto es un test', 'enviado');
+(24, 'krgrojas@gmail.com', 73, 'Hola que tal....', 'Esto es un test', 'enviado');
+(25, 'krgrojas@gmail.com', 74, 'Esto es un test', 'Esto es un test', 'enviado');
+(26, 'krgrojas@gmail.com', 73, 'Este correo esta sin enviar', 'Esto es un test', 'pendiente');
+(27, 'krgrojas@gmail.com', 74, 'Hola mundo', 'Esto es un test', 'pendiente');
 
 -- Estructura de tabla para la tabla `users`
 CREATE TABLE `users` (
@@ -49,6 +52,7 @@ CREATE TABLE `users` (
 -- Insert de datos para la tabla `users`
 INSERT INTO `users` (`id`, `name`, `user`, `password`, `estado`, `email`) VALUES
 (73, 'Kevin Rojas', 'Churumuco', '202cb962ac59075b964b07152d234b70', 1, 'krgr17@hotmail.com');
+(74, 'Carlos Rojas', 'Carl', 'caf1a3dfb505ffed0d024130f58c5cfa', 1, 'krgrojas@gmail.com');
 
 ALTER TABLE `emails`
   ADD PRIMARY KEY (`id`);
